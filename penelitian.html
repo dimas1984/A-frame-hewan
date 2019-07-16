@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>Penelitian menggunakan Aframe-real</title>
+  <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script> 
+  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script> 
+    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+</head>
+ 
+<body>
+   <a-scene background="color: #FAFAFA" environment="preset: forest">
+      
+<!-- asset      -->
+<a-assets>
+    <a-asset-item id="bee" src="model/animal/bee/scene.gltf">
+    </a-asset-item>
+</a-assets>
+      
+<!--      keterangan awal -->
+      <a-text value="Selamat Datang Di Dunia Satwa!" position="-1.5 4 -5" color="#000" scale="1.5 1.5 1.5"></a-text>
+      <a-text value="Arahkan Ke hewan agar mendapatkan Informasi selengkapnya." position="-1.5 3.5 -5" color="#000"></a-text>
+       
+      <a-entity gltf-model="model/animal/bee/scene.gltf" scale="0.2 0.2 0.2" position="0 0 -4" 
+                animation__mouseenter="property: rotation; to: 0 360 0; dur: 3000;startEvents: mouseenter;loop:true"
+                animation__mouseleave="property: rotation; to: 0 0 0; dur: 300; startEvents: mouseleave;">
+      </a-entity>
+
+
+    <a-camera>
+        <a-cursor>
+        </a-cursor></a-camera>
+  </a-scene>
+</body>
+</html>
